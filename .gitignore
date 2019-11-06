@@ -61,4 +61,4 @@ typings/
 .next
 
 # package.json and package-lock.json files
-.json
+\!important!.json
