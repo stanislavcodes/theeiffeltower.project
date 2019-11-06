@@ -59,6 +59,3 @@ typings/
 
 # next.js build output
 .next
-
-# package.json and package-lock.json files
-\!important!.json
