@@ -1,10 +1,22 @@
 //___________________COLORS___________________\\
-$color-grey-dark--1: #414141;
-$color-grey-dark--2: #292929;
-$color-grey: #C9E4FF;
-//$color-grey-light--1: #b1b1b1;
-$color-grey-light--1: #878787;
-$color-grey-light--2: #707070;
-
+$color-grey: #eaeaea;
+$color-text: #292929;
+$color-heading-primary: #414141;
+$color-heading-tertiary: #b1b1b1;
 //____________________________________________\\
 $default-font-size: 2rem;
+// Breakpoints
+$breakpoints: (
+    small: 499px,
+    medium: 699px,
+    large: 999px,
+    xlarge: 1399px
+);
+
+@mixin breakpoint($size){
+    $breakpoint-value: map-get($breakpoints, $size);
+    
+    @media screen and (min-width: $breakpoint-value){
+        @content;
+    }
+}

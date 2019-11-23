@@ -1,45 +1,16 @@
-//MEDIA QUERIES MANAGER
-@mixin breakpoint($size) {
-    @if $size == phone {
-        @media only screen and (max-width: 499px) { @content }
-    };
-    @if $size == tablet {
-        @media only screen and (max-width: 899px) { @content }
-    };
-    @if $size == laptop {
-        @media only screen and (max-width: 1199px) { @content }
-    };
-    @if $size == desktop {
-        @media only screen and (min-width: 1799px) { @content }
-    };
-}
-///////////////////////
 *,
 html {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-size: 62.5%;
-
-    @include breakpoint(desktop) {
-        font-size: 68.75%;              // 1rem = 11px
-    }
-    @include breakpoint(laptop) {
-        font-size: 56.25%;              // 1rem = 9px
-    }
-    @include breakpoint(tablet) {
-        font-size: 50%;                 // 1rem = 8px
-    }
-    @include breakpoint(phone) {
-        font-size: 37.5%;               // 1rem = 6px
-    }
 }
 
 body {
     padding: 0;
     margin: 0;
-    font-size: 2rem;
+    font-size: calc(14px + 0.25vw);
     font-family: 'Roboto', sans-serif;
+    line-height: 1.65;
 }
 
 .container {
@@ -48,71 +19,24 @@ body {
     box-sizing: border-box;
     //OVERAL LAYOUT
     display: grid;
-    grid-template-columns: [sidebar-start] 12vw [sidebar-end full-start] 1fr [full-end];
-    grid-template-rows: [header-start] 100vh [header-end content-start] repeat(8, 88vh) [content-end footer-start] 10vh [footer-end];
+    grid-template-columns: [header-start full-start] 1fr [header-end full-end];
+    grid-template-rows: [header-start] 12vh [header-end content-start] 88vh repeat(8, 68vh min-content) [content-end footer-start] 10vh [footer-end];
 
-    @include breakpoint(tablet) {
-        grid-template-columns: [sidebar-start full-start] 1fr [sidebar-end full-end];
-        grid-template-rows: 10vh [header-start] 90vh [header-end content-start] repeat(8, 65vh) [content-end footer-start] 10vh [footer-end];
-    }
-    @include breakpoint(phone) {
-        grid-template-columns: [sidebar-start full-start] 1fr [sidebar-end full-end];
-        grid-template-rows: 10vh [header-start] 90vh [header-end content-start] repeat(8, 48vh 65vh) [content-end footer-start] 10vh [footer-end];
+    @include breakpoint(large) {
+        grid-template-columns: [header-start] 13.125vw [header-end full-start] 1fr [full-end];
+        grid-template-rows: [header-start content-start] 100vh [header-end] repeat(8, 88vh) [content-end footer-start] 10vh [footer-end];
     }
 }
 
 //___________________TYPOGRAPHY___________________\\
 .heading-primary {
-    font-size: 7rem;
-    font-weight: 100;
-    color: $color-grey-dark--1;
-    margin-bottom: 2rem;
-
-    @include breakpoint(desktop) {
-        font-size: 10rem;
-    } 
-    @include breakpoint(laptop) {
-        font-size: 8rem;
-    }
-    @include breakpoint(phone) {
-        font-size: 6rem;
-        margin-bottom: auto;
-    }
+    
 }
 .heading-secondary {
-    font-size: 2.9rem;
     font-weight: 100;
-    color: $color-grey-dark--1;
-
-    @include breakpoint(desktop) {
-        font-size: 4rem;
-    } 
-    @include breakpoint(laptop) {
-        font-size: 2.7rem;
-    }
-    @include breakpoint(tablet) {
-        font-size: 2.2rem;
-    }
-    @include breakpoint(phone) {
-        font-size: 3rem;
-    }
+    color: $color-heading-primary;
 }
-.heading-tertiary {
-    font-size: 2.5rem;
-    font-weight: 400;
-    color: $color-grey-light--1;
+.heading-primary {
 
-    @include breakpoint(desktop) {
-       font-size: 2.6rem;
-    } 
-    @include breakpoint(laptop) {
-      font-size: 2.7rem;
-    }
-    @include breakpoint(tablet) {
-        font-size: 2.8rem;
-    }
-    @include breakpoint(phone) {
-        font-size: 2.1rem;
-    } 
 }
 //________________________________________________\\
