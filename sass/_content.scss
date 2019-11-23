@@ -16,6 +16,7 @@
 
 .section {
     &-picture {
+        background-color: $color-grey;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -28,15 +29,25 @@
 
         &__img {
             max-width: 100%;
+
+            @include breakpoint(large) {
+                max-width: 500px;
+            }
         }
     };
     &-info {
         background-color: #fff;
 
-        h2 {
+        .heading-secondary {
             margin-top: 0.8em;
             padding: 0.5em;
-            background: linear-gradient(to right, #eaeaea 0%, #fff 60%);
+            background: linear-gradient(45deg, #fff 0%, #eaeaea 60%);
+            text-align: right;
+
+            &--reverse {
+                background: linear-gradient(270deg, #fff 0%, #eaeaea 60%);
+                text-align: left;
+            }
         }
 
         &__article {
@@ -53,6 +64,12 @@
             color: $color-text;
             font-size: calc(1em + 0.2vw);
             line-height: 1.4;
+        }
+    }
+
+    &__list {
+        &--item {
+            
         }
     }
 
