@@ -10,7 +10,6 @@ body {
     margin: 0;
     font-size: calc(14px + 0.25vw);
     font-family: 'Roboto', sans-serif;
-    line-height: 1.65;
 }
 
 .container {
@@ -20,7 +19,7 @@ body {
     //OVERAL LAYOUT
     display: grid;
     grid-template-columns: [header-start full-start] 1fr [header-end full-end];
-    grid-template-rows: [header-start] 12vh [header-end content-start] 88vh repeat(8, 68vh min-content) [content-end footer-start] 10vh [footer-end];
+    grid-template-rows: [header-start] 10vh  [header-end content-start] 90vh repeat(8, max-content min-content) [content-end footer-start] 10vh [footer-end];
 
     @include breakpoint(large) {
         grid-template-columns: [header-start] 13.125vw [header-end full-start] 1fr [full-end];
@@ -30,13 +29,41 @@ body {
 
 //___________________TYPOGRAPHY___________________\\
 .heading-primary {
-    
-}
-.heading-secondary {
+    font-size: calc(2em + 1vw);
     font-weight: 100;
     color: $color-heading-primary;
-}
-.heading-primary {
 
+    @include breakpoint(xsmall) {
+        font-size: calc(2.5em + 0.75vw);
+    }
+
+    @include breakpoint(medium) {
+        font-size: calc(3.5em + 0.75vw);
+        margin-bottom: auto;
+    }
+}
+.heading-secondary {
+    font-size: calc(1em + 1.5vw);
+    font-weight: 100;
+    color: $color-heading-primary;
+
+    @include breakpoint(medium) {
+        font-size: calc(1em + 0.75vw);
+        margin-bottom: auto;
+    }
+
+    @include breakpoint(large) {
+        font-size: calc(1em + 0.75vw);
+    }
+
+}
+.heading-tertiary {
+    font-size: calc(1em - 0.25vw);
+    font-weight: 400;
+    color: $color-heading-tertiary;
+
+    @include breakpoint(medium) {
+        font-size: calc(1em + 0.25vw);
+    }
 }
 //________________________________________________\\

@@ -6,17 +6,18 @@
     //CONTENT LAYOUT
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 88vh repeat(8, 68vh min-content);
+    grid-template-rows: 90vh repeat(8, max-content min-content);
     
-    @include breakpoint(large) {
+    @include breakpoint(medium) {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 100vh repeat(8, 88vh);
+        grid-template-rows: 90vh repeat(8, max-content min-content);
     }
 }
 
 .section {
     &-picture {
         background-color: $color-grey;
+        background-color: #414141;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -30,56 +31,155 @@
         &__img {
             max-width: 100%;
 
+            @include breakpoint(medium) {
+                max-width: 80%;
+            }
             @include breakpoint(large) {
-                max-width: 500px;
+                max-width: 80%;
+            }
+            @include breakpoint(xlarge) {
+                max-width: 90%;
             }
         }
     };
     &-info {
         background-color: #fff;
-
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content 1fr;
+    
         .heading-secondary {
             margin-top: 0.8em;
-            padding: 0.5em;
-            background: linear-gradient(45deg, #fff 0%, #eaeaea 60%);
-            text-align: right;
+            padding: 0.5em 1em;
+            background: $color-grey;
+            text-align: left;
+
+            @include breakpoint(large) {
+                text-align: right;
+                background: $color-grey;
+            }
 
             &--reverse {
-                background: linear-gradient(270deg, #fff 0%, #eaeaea 60%);
-                text-align: left;
+
+                @include breakpoint(large) {
+                    background: $color-grey;
+                    text-align: left;
+                }
             }
         }
 
         &__article {
             width: 100%;
             height: 100%;
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: min-content 1fr;
-            
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         &__text {
-            padding: 2em 2em 0 2em;
             color: $color-text;
             font-size: calc(1em + 0.2vw);
             line-height: 1.4;
+            max-width: 80%;
+            margin: 2em;
         }
     }
 
     &__list {
+        padding: 2em 2em 2em 3em;
+        color: $color-text;
+        list-style: circle;
+        max-width: 80%;
+
         &--item {
-            
+            line-height: 1.65;
         }
     }
 
     &-hero {
-        background-color: #ff1111;
+        //OVERAL LAYOUT
         grid-column: 1 / -1;
         grid-row: 1 / 2;
+        position: relative;
+
+        //HERO CONTENT
+        display: grid;
+        grid-template-columns: [info-start picture-start] 1fr [info-end picture-end];
+        grid-template-rows: [picture-start] 1fr [picture-end info-start] min-content [info-end];
+
+        @include breakpoint(medium) {
+            grid-template-columns: repeat(16, 1fr);
+            grid-template-rows: [picture-start] 1fr max-content [info-start] min-content [info-end] 0.5fr [picture-end];
+        }
+
+        &__heading-box {
+            //grid-column: 3 / -1;
+            //grid-row: 4 / 9;
+            position: absolute;
+            top: 9%;
+            right: 0;
+            background: linear-gradient(to left, #ffffff, #ffffffe1);
+            padding: 1em;
+
+            @include breakpoint(medium) {
+                background: linear-gradient(to left, #ffffff, #ffffff93);
+                position: relative;
+                top: 0;
+                right: 0;
+                grid-column: 7 / -1;
+                grid-row: 2 / 3;
+            }
+        }
+
+        &__picture-box {
+            background-image: url(../img/theeiffeltower-bw.jpg);
+            background-size: cover;
+            background-position: bottom;
+
+            grid-column: picture-start / picture-end;
+            grid-row: picture-start / picture-end;
+
+            @include breakpoint(medium) {
+                grid-column: 1 / 9;
+            }
+        }
+
+        &__info-box {
+            background-color: #ffffff;
+            color: #292929;
+            padding: 1em 2em;
+            grid-row: info-start / info-end;
+            grid-column: info-start / info-end;
+
+            @include breakpoint(medium) {
+                grid-column: 9 / -1;
+                grid-row: info-start / info-end;
+                padding: 0 2em 2em 2em;
+            }
+        }
+
+        &__info {
+            font-size: calc(1em - 0.55vw);
+            line-height: 1.4;
+            margin-bottom: 1em;
+
+            @include breakpoint(medium) {
+                font-size: calc(1em + 0.25vw);
+            }
+        }
+
+        &__more-button {
+            text-decoration: none;
+            border: none;
+            font-weight: 700;
+            font-size: calc(1em - 0.25vw);
+            color: $color-text;
+            text-align: center;
+        }
+
     }
     //CONTENT LAYOUT
-    @include breakpoint(large) {
+    @include breakpoint(medium) {
         &:nth-child(2) {
             grid-column: 1 / 2;
             grid-row: 2 / 3;

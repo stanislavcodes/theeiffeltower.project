@@ -1,12 +1,12 @@
 //___________________COLORS___________________\\
-$color-grey: #eaeaea;
+$color-grey: #ececec;
 $color-text: #292929;
 $color-heading-primary: #414141;
 $color-heading-tertiary: #b1b1b1;
 //____________________________________________\\
-$default-font-size: 2rem;
 // Breakpoints
 $breakpoints: (
+    xsmall: 359px,
     small: 499px,
     medium: 699px,
     large: 999px,
