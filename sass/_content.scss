@@ -10,7 +10,11 @@
     
     @include breakpoint(medium) {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 90vh repeat(8, max-content min-content);
+        grid-template-rows: 100vh repeat(8, max-content);
+    }
+
+    @include breakpoint(large) {
+        grid-template-rows: 100vh repeat(8, minmax(max-content, 80vh));
     }
 }
 
@@ -35,10 +39,7 @@
                 max-width: 80%;
             }
             @include breakpoint(large) {
-                max-width: 80%;
-            }
-            @include breakpoint(xlarge) {
-                max-width: 90%;
+                max-width: 70%;
             }
         }
     };
@@ -59,14 +60,17 @@
 ;
             text-align: left;
 
-            @include breakpoint(large) {
+            @include breakpoint(medium) {
                 text-align: right;
-                background: $color-grey;
+            }
+
+            @include breakpoint(large) {
+                background-image: linear-gradient(75deg, transparent 0%, transparent 20%, #eaeaeaea 20%, #eaeaeaea 100%);
             }
 
             &--reverse {
 
-                @include breakpoint(large) {
+                @include breakpoint(medium) {
                     background: $color-grey;
                     text-align: left;
                 }
@@ -91,6 +95,14 @@
             @include breakpoint(xsmall) {
                 font-size: 1em;
             }
+
+            @include breakpoint(large) {
+                font-size: calc(1em + 0.25vw);
+            }
+
+            @include breakpoint(medium) {
+                font-size: 1em;
+            }
         }
     }
 
@@ -105,12 +117,18 @@
         @include breakpoint(xsmall) {
             font-size: 1em;
         }
+        
+        @include breakpoint(medium) {
+            font-size: calc(1em + 0.25vw);
+        }
+
+        @include breakpoint(medium) {
+            font-size: 1em;
+        }
 
         &--item {
             line-height: 1.65;
         }
-
-
     }
 
     &-hero {
@@ -130,8 +148,6 @@
         }
 
         &__heading-box {
-            //grid-column: 3 / -1;
-            //grid-row: 4 / 9;
             position: absolute;
             top: 9%;
             right: 0;
@@ -149,7 +165,6 @@
         }
 
         &__picture-box {
-            background-image: url(../img/theeiffeltower-bw.jpg);
             background-size: cover;
             background-position: bottom;
 
@@ -158,6 +173,28 @@
 
             @include breakpoint(medium) {
                 grid-column: 1 / 9;
+                background-image: none;
+                background-color: #414141;
+                display: grid;
+                grid-template-columns: repeat(8, 1fr);
+                grid-template-rows: repeat(17, 1fr);
+
+            }
+        }
+
+        &__figure {
+            width: 100%;
+            height: 100%;
+            background-image: url(../img/theeiffeltower-bw.jpg);
+            background-size: cover;
+            background-position: bottom;
+            background-repeat: no-repeat;
+
+            @include breakpoint(medium) {
+                display: block;
+                grid-column: 2 / -1;
+                grid-row: 2 / 17;
+                width: 100%;
             }
         }
 
@@ -183,8 +220,13 @@
             @include breakpoint(xsmall) {
                 font-size: 1em;
             }
+
             @include breakpoint(medium) {
                 font-size: calc(1em + 0.25vw);
+            }
+            
+            @include breakpoint(large) {
+                font-size: 1em;
             }
         }
 

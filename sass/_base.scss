@@ -21,9 +21,14 @@ body {
     grid-template-columns: [header-start full-start] 1fr [header-end full-end];
     grid-template-rows: [header-start] 10vh  [header-end content-start] 90vh repeat(8, max-content min-content) [content-end footer-start] 10vh [footer-end];
 
+    @include breakpoint(medium) {
+        grid-template-columns: [header-start full-start] 1fr [header-end full-end];
+        grid-template-rows: [header-start] 10vh  [header-end content-start] 90vh repeat(8, max-content) [content-end footer-start] 10vh [footer-end];
+    }
+
     @include breakpoint(large) {
         grid-template-columns: [header-start] 13.125vw [header-end full-start] 1fr [full-end];
-        grid-template-rows: [header-start content-start] 100vh [header-end] repeat(8, 88vh) [content-end footer-start] 10vh [footer-end];
+        grid-template-rows: [header-start content-start] 100vh [header-end] repeat(8, max-content) [content-end footer-start] 10vh [footer-end];
     }
 }
 
