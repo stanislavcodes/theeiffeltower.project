@@ -17,10 +17,14 @@ body {
   display: grid;
   grid-template-columns: [header-start full-start] 1fr [header-end full-end];
   grid-template-rows: [header-start] 10vh [header-end content-start] 90vh repeat(8, max-content min-content) [content-end footer-start] 10vh [footer-end]; }
+  @media screen and (min-width: 699px) {
+    .container {
+      grid-template-columns: [header-start full-start] 1fr [header-end full-end];
+      grid-template-rows: [header-start] 10vh [header-end content-start] 90vh repeat(8, max-content) [content-end footer-start] 10vh [footer-end]; } }
   @media screen and (min-width: 999px) {
     .container {
       grid-template-columns: [header-start] 13.125vw [header-end full-start] 1fr [full-end];
-      grid-template-rows: [header-start content-start] 100vh [header-end] repeat(8, 88vh) [content-end footer-start] 10vh [footer-end]; } }
+      grid-template-rows: [header-start content-start] 100vh [header-end] repeat(8, max-content) [content-end footer-start] 10vh [footer-end]; } }
 
 .heading-primary {
   font-size: calc(2em + 1vw);
@@ -67,7 +71,10 @@ body {
   @media screen and (min-width: 699px) {
     .content {
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: 90vh repeat(8, max-content min-content); } }
+      grid-template-rows: 100vh repeat(8, max-content); } }
+  @media screen and (min-width: 999px) {
+    .content {
+      grid-template-rows: 100vh repeat(8, minmax(max-content, 80vh)); } }
 
 .section-picture {
   background-color: #ececec;
@@ -86,10 +93,7 @@ body {
         max-width: 80%; } }
     @media screen and (min-width: 999px) {
       .section-picture__img {
-        max-width: 80%; } }
-    @media screen and (min-width: 1399px) {
-      .section-picture__img {
-        max-width: 90%; } }
+        max-width: 70%; } }
 
 .section-info {
   background-color: #fff;
@@ -104,11 +108,13 @@ body {
     background-position: bottom;
     background-size: cover;
     text-align: left; }
+    @media screen and (min-width: 699px) {
+      .section-info .heading-secondary {
+        text-align: right; } }
     @media screen and (min-width: 999px) {
       .section-info .heading-secondary {
-        text-align: right;
-        background: #ececec; } }
-    @media screen and (min-width: 999px) {
+        background-image: linear-gradient(75deg, transparent 0%, transparent 20%, #eaeaeaea 20%, #eaeaeaea 100%); } }
+    @media screen and (min-width: 699px) {
       .section-info .heading-secondary--reverse {
         background: #ececec;
         text-align: left; } }
@@ -127,6 +133,12 @@ body {
     @media screen and (min-width: 359px) {
       .section-info__text {
         font-size: 1em; } }
+    @media screen and (min-width: 999px) {
+      .section-info__text {
+        font-size: calc(1em + 0.25vw); } }
+    @media screen and (min-width: 699px) {
+      .section-info__text {
+        font-size: 1em; } }
 
 .section__list {
   padding: 0 1em;
@@ -136,6 +148,12 @@ body {
   max-width: 80%;
   font-size: calc(1em - 0.55vw); }
   @media screen and (min-width: 359px) {
+    .section__list {
+      font-size: 1em; } }
+  @media screen and (min-width: 699px) {
+    .section__list {
+      font-size: calc(1em + 0.25vw); } }
+  @media screen and (min-width: 699px) {
     .section__list {
       font-size: 1em; } }
   .section__list--item {
@@ -167,14 +185,31 @@ body {
         grid-column: 7 / -1;
         grid-row: 2 / 3; } }
   .section-hero__picture-box {
-    background-image: url(../img/theeiffeltower-bw.jpg);
     background-size: cover;
     background-position: bottom;
     grid-column: picture-start / picture-end;
     grid-row: picture-start / picture-end; }
     @media screen and (min-width: 699px) {
       .section-hero__picture-box {
-        grid-column: 1 / 9; } }
+        grid-column: 1 / 9;
+        background-image: none;
+        background-color: #414141;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(17, 1fr); } }
+  .section-hero__figure {
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/theeiffeltower-bw.jpg);
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat; }
+    @media screen and (min-width: 699px) {
+      .section-hero__figure {
+        display: block;
+        grid-column: 2 / -1;
+        grid-row: 2 / 17;
+        width: 100%; } }
   .section-hero__info-box {
     background-color: #ffffff;
     color: #292929;
@@ -196,6 +231,9 @@ body {
     @media screen and (min-width: 699px) {
       .section-hero__info {
         font-size: calc(1em + 0.25vw); } }
+    @media screen and (min-width: 999px) {
+      .section-hero__info {
+        font-size: 1em; } }
   .section-hero__more-button {
     text-decoration: none;
     border: none;
