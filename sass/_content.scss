@@ -50,8 +50,13 @@
     
         .heading-secondary {
             margin-top: 0.8em;
+            margin-top: 1em;
             padding: 0.5em 1em;
-            background: $color-grey;
+            //background: $color-grey;
+            background-image: linear-gradient(105deg, #eaeaeaea 0%, #eaeaeaea 80%, transparent 80%, transparent 100%);
+            background-position: bottom;
+            background-size: cover;
+;
             text-align: left;
 
             @include breakpoint(large) {
@@ -78,22 +83,34 @@
 
         &__text {
             color: $color-text;
-            font-size: calc(1em + 0.2vw);
+            font-size: calc(1em - 0.55vw);
             line-height: 1.4;
             max-width: 80%;
             margin: 2em;
+
+            @include breakpoint(xsmall) {
+                font-size: 1em;
+            }
         }
     }
 
     &__list {
-        padding: 2em 2em 2em 3em;
+        padding: 0 1em;
+        margin: 2em;
         color: $color-text;
         list-style: circle;
         max-width: 80%;
+        font-size: calc(1em - 0.55vw);
+
+        @include breakpoint(xsmall) {
+            font-size: 1em;
+        }
 
         &--item {
             line-height: 1.65;
         }
+
+
     }
 
     &-hero {
@@ -163,6 +180,9 @@
             line-height: 1.4;
             margin-bottom: 1em;
 
+            @include breakpoint(xsmall) {
+                font-size: 1em;
+            }
             @include breakpoint(medium) {
                 font-size: calc(1em + 0.25vw);
             }

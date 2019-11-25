@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    //font-size: 1.4rem;
+    font-size: calc(1em - 0.5vw);
     color: #cacaca;
     //OVERAL LAYOUT
     grid-column: full-start / full-end;

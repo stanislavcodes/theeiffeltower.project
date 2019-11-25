@@ -43,9 +43,14 @@ body {
     }
 }
 .heading-secondary {
-    font-size: calc(1em + 1.5vw);
+    font-size: calc(1em + 0.75vw);
     font-weight: 100;
     color: $color-heading-primary;
+
+    @include breakpoint(xsmall) {
+        font-size: calc(1em + 1.5vw);
+        margin-bottom: auto;
+    }
 
     @include breakpoint(medium) {
         font-size: calc(1em + 0.75vw);
