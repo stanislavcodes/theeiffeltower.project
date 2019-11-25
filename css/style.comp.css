@@ -35,9 +35,13 @@ body {
       margin-bottom: auto; } }
 
 .heading-secondary {
-  font-size: calc(1em + 1.5vw);
+  font-size: calc(1em + 0.75vw);
   font-weight: 100;
   color: #414141; }
+  @media screen and (min-width: 359px) {
+    .heading-secondary {
+      font-size: calc(1em + 1.5vw);
+      margin-bottom: auto; } }
   @media screen and (min-width: 699px) {
     .heading-secondary {
       font-size: calc(1em + 0.75vw);
@@ -49,7 +53,7 @@ body {
 .heading-tertiary {
   font-size: calc(1em - 0.25vw);
   font-weight: 400;
-  color: #b1b1b1; }
+  color: #a9a9a9; }
   @media screen and (min-width: 699px) {
     .heading-tertiary {
       font-size: calc(1em + 0.25vw); } }
@@ -94,8 +98,11 @@ body {
   grid-template-rows: min-content 1fr; }
   .section-info .heading-secondary {
     margin-top: 0.8em;
+    margin-top: 1em;
     padding: 0.5em 1em;
-    background: #ececec;
+    background-image: linear-gradient(105deg, #eaeaeaea 0%, #eaeaeaea 80%, transparent 80%, transparent 100%);
+    background-position: bottom;
+    background-size: cover;
     text-align: left; }
     @media screen and (min-width: 999px) {
       .section-info .heading-secondary {
@@ -113,16 +120,24 @@ body {
     justify-content: center; }
   .section-info__text {
     color: #292929;
-    font-size: calc(1em + 0.2vw);
+    font-size: calc(1em - 0.55vw);
     line-height: 1.4;
     max-width: 80%;
     margin: 2em; }
+    @media screen and (min-width: 359px) {
+      .section-info__text {
+        font-size: 1em; } }
 
 .section__list {
-  padding: 2em 2em 2em 3em;
+  padding: 0 1em;
+  margin: 2em;
   color: #292929;
   list-style: circle;
-  max-width: 80%; }
+  max-width: 80%;
+  font-size: calc(1em - 0.55vw); }
+  @media screen and (min-width: 359px) {
+    .section__list {
+      font-size: 1em; } }
   .section__list--item {
     line-height: 1.65; }
 
@@ -175,6 +190,9 @@ body {
     font-size: calc(1em - 0.55vw);
     line-height: 1.4;
     margin-bottom: 1em; }
+    @media screen and (min-width: 359px) {
+      .section-hero__info {
+        font-size: 1em; } }
     @media screen and (min-width: 699px) {
       .section-hero__info {
         font-size: calc(1em + 0.25vw); } }
@@ -275,7 +293,8 @@ body {
   .header__link {
     text-decoration: none;
     border: none;
-    color: #292929; }
+    color: #292929;
+    font-weight: 500; }
   .header__icon {
     font-size: 1.6rem;
     color: #292929; }
@@ -285,6 +304,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: calc(1em - 0.5vw);
   color: #cacaca;
   grid-column: full-start / full-end;
   grid-row: footer-start / footer-end; }
