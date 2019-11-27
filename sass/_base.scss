@@ -43,7 +43,7 @@ body {
     }
 
     @include breakpoint(medium) {
-        font-size: calc(3.5em + 0.75vw);
+        font-size: calc(4em + 0.75vw);
         margin-bottom: auto;
     }
 }
