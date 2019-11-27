@@ -23,7 +23,7 @@ body {
 
     @include breakpoint(medium) {
         grid-template-columns: [header-start full-start] 1fr [header-end full-end];
-        grid-template-rows: [header-start] 10vh  [header-end content-start] 90vh repeat(8, max-content) [content-end footer-start] 10vh [footer-end];
+        grid-template-rows: [header-start] 10vh  [header-end content-start] 90vh repeat(8, 60vh) [content-end footer-start] 10vh [footer-end];
     }
 
     @include breakpoint(large) {

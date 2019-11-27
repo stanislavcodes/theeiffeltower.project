@@ -10,7 +10,7 @@
     
     @include breakpoint(medium) {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 100vh repeat(8, max-content);
+        grid-template-rows: 90vh repeat(8, 60vh);
     }
 
     @include breakpoint(large) {
@@ -22,6 +22,10 @@
     &-picture {
         background-color: $color-grey;
         background-color: #414141;
+        background-image: url(../img/bg.png);
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -55,23 +59,17 @@
             padding: 0.5em 1em;
             //background: $color-grey;
             background-image: linear-gradient(105deg, #eaeaeaea 0%, #eaeaeaea 80%, transparent 80%, transparent 100%);
-            background-position: bottom;
-            background-size: cover;
-;
             text-align: left;
 
             @include breakpoint(medium) {
                 text-align: right;
-            }
-
-            @include breakpoint(large) {
-                background-image: linear-gradient(75deg, transparent 0%, transparent 20%, #eaeaeaea 20%, #eaeaeaea 100%);
+                background-image: linear-gradient(75deg, transparent 0%, transparent 15%, #eaeaeaea 15%, #eaeaeaea 100%);
             }
 
             &--reverse {
 
                 @include breakpoint(medium) {
-                    background: $color-grey;
+                    background-image: linear-gradient(105deg, #eaeaeaea 0%, #eaeaeaea 85%, transparent 85%, transparent 100%);
                     text-align: left;
                 }
             }
@@ -96,13 +94,14 @@
                 font-size: 1em;
             }
 
+            @include breakpoint(medium) {
+                font-size: 1em;
+            }
+
             @include breakpoint(large) {
                 font-size: calc(1em + 0.25vw);
             }
 
-            @include breakpoint(medium) {
-                font-size: 1em;
-            }
         }
     }
 
@@ -173,8 +172,9 @@
 
             @include breakpoint(medium) {
                 grid-column: 1 / 9;
-                background-image: none;
-                background-color: #414141;
+                background-image: url(../img/bg.png);
+                background-size: cover;
+                background-repeat: no-repeat;
                 display: grid;
                 grid-template-columns: repeat(8, 1fr);
                 grid-template-rows: repeat(17, 1fr);
@@ -222,11 +222,13 @@
             }
 
             @include breakpoint(medium) {
-                font-size: calc(1em + 0.25vw);
+                font-size: 1em;
+                //max-width: 97%;
             }
             
             @include breakpoint(large) {
                 font-size: 1em;
+                max-width: 87%;
             }
         }
 
