@@ -57,7 +57,7 @@
             text-align: center;
             background-color: #fff;
         }
-
+/*
         &::before {
             @include breakpoint(large) {
                 content: "";
@@ -70,7 +70,7 @@
                 background-size: 50%;
                 z-index: 1;
             }
-        }
+        }*/
     }
 
     &__link {
@@ -78,11 +78,11 @@
         border: none;
         color: $color-text;
         font-weight: 400;
-
+/*
         @include breakpoint(large) {
             color: $color-grey;
             z-index: 10;
-        }
+        }*/
     }
 
     &__icon {

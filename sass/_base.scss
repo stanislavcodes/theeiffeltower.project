@@ -46,6 +46,10 @@ body {
         font-size: calc(4em + 0.75vw);
         margin-bottom: auto;
     }
+
+    @include breakpoint(xlarge) {
+        font-size: calc(4.5em + 0.75vw);
+    }
 }
 .heading-secondary {
     font-size: calc(1em + 0.75vw);

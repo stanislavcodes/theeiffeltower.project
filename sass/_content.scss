@@ -99,7 +99,7 @@
             }
 
             @include breakpoint(large) {
-                font-size: 1em;
+                font-size: calc(1em + 0.15vw);
             }
         }
     }
@@ -125,7 +125,7 @@
         }
 
         @include breakpoint(xlarge) {
-            font-size: calc(1em + 0.25vw);
+            font-size: calc(1em + 0.15vw);
         }
 
         &--item {
@@ -148,9 +148,15 @@
             grid-template-columns: repeat(16, 1fr);
             grid-template-rows: [picture-start] 1fr max-content [info-start] min-content [info-end] 0.5fr [picture-end];
         }
+        
         @include breakpoint(large) {
             grid-template-columns: repeat(16, 1fr);
             grid-template-rows: [picture-start] 1fr max-content [info-start] max-content [info-end picture-end];
+        }
+
+        @include breakpoint(xlarge) {
+            grid-template-columns: repeat(16, 1fr);
+            grid-template-rows: [picture-start] 1fr max-content [info-start] max-content [info-end] 0.5fr  [picture-end];
         }
 
         &__heading-box {
@@ -167,6 +173,10 @@
                 right: 0;
                 grid-column: 7 / -1;
                 grid-row: 2 / 3;
+            }
+
+            @include breakpoint(xlarge) {
+                padding: 1.5em;
             }
         }
 
@@ -218,8 +228,9 @@
                 padding: 0 2em 2em 2em;
             }
 
-            @include breakpoint(medium) {
-                grid-row: info-start / info-end;
+            @include breakpoint(xlarge) {
+                grid-column: 9 / 16;
+                padding: 0 2.5em;
             }
         }
 
@@ -239,12 +250,11 @@
             
             @include breakpoint(large) {
                 font-size: 1em;
-                max-width: 87%;
+                //max-width: 87%;
             }
             
             @include breakpoint(xlarge) {
-                font-size: calc(1em + 0.25vw);
-                max-width: 87%;
+                font-size: calc(1em + 0.15vw);
             }
         }
 
@@ -252,9 +262,17 @@
             text-decoration: none;
             border: none;
             font-weight: 700;
-            font-size: calc(1em - 0.25vw);
+            font-size: calc(1em - 0.5vw);
             color: $color-text;
             text-align: center;
+
+            @include breakpoint(medium) {
+                font-size: calc(1em - 0.25vw);
+            }
+
+            @include breakpoint(xlarge) {
+                
+            }
         }
 
     }

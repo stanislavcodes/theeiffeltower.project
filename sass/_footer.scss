@@ -9,4 +9,9 @@
     //OVERAL LAYOUT
     grid-column: full-start / full-end;
     grid-row: footer-start / footer-end;
+
+    
+    @include breakpoint(large) {
+        font-size: calc(1em + 0.15vw);
+    }
 }
