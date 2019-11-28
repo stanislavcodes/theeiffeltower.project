@@ -139,7 +139,7 @@ body {
     @media screen and (min-width: 699px) {
       .section-info__text {
         font-size: 1em; } }
-    @media screen and (min-width: 1029px) {
+    @media screen and (min-width: 1399px) {
       .section-info__text {
         font-size: calc(1em + 0.15vw); } }
 
@@ -169,6 +169,7 @@ body {
   grid-column: 1 / -1;
   grid-row: 1 / 2;
   position: relative;
+  background-color: #fff;
   display: grid;
   grid-template-columns: [info-start picture-start] 1fr [info-end picture-end];
   grid-template-rows: [picture-start] 1fr [picture-end info-start] min-content [info-end]; }
@@ -342,56 +343,86 @@ body {
     align-self: stretch;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-between; }
+    align-items: stretch;
+    justify-content: space-between;
+    list-style: none; }
     @media screen and (min-width: 1029px) {
       .header__icon-box {
         flex-direction: column; } }
-    .header__icon-box a {
+    .header__icon-box--item {
       text-decoration: none;
       border: none;
-      color: #292929; }
-      .header__icon-box a:not(:last-child) {
-        margin-right: 2rem; }
+      color: #292929;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .header__icon-box--item a {
+        text-decoration: none;
+        border: none;
+        color: currentColor; }
+      .header__icon-box--item:not(:last-child) {
+        margin-right: 2em; }
         @media screen and (min-width: 1029px) {
-          .header__icon-box a:not(:last-child) {
+          .header__icon-box--item:not(:last-child) {
             margin-right: 0;
-            margin-bottom: 2rem; } }
-  .header__link-box {
-    /*
-        &::before {
-            @include breakpoint(large) {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(to right, #4141418f, #4141418f), url(../img/bg.png);
-                background-size: 50%;
-                z-index: 1;
-            }
-        }*/ }
+            margin-bottom: 0.5em; } }
+      @media screen and (min-width: 1029px) {
+        .header__icon-box--item {
+          position: relative;
+          padding: 0.85em; }
+          .header__icon-box--item::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0;
+            background: linear-gradient(to right, #4141418f, #4141418f), url(../img/bg.png);
+            background-size: 120%;
+            transition: width .3s, color .3s; }
+          .header__icon-box--item:hover::before {
+            width: 100%; }
+          .header__icon-box--item:hover {
+            color: #eaeaea; } }
+  .header__icon {
+    font-size: 1.6rem; }
     @media screen and (min-width: 1029px) {
-      .header__link-box {
+      .header__icon {
         position: relative;
-        align-self: stretch;
-        padding: 1em;
-        text-align: center;
-        background-color: #fff; } }
+        z-index: 9; } }
+  @media screen and (min-width: 1029px) {
+    .header__link-box {
+      position: relative;
+      align-self: stretch;
+      padding: 1em;
+      text-align: center;
+      background-color: #fff;
+      color: #292929; } }
+  @media screen and (min-width: 1029px) {
+    .header__link-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(to right, #4141418f, #4141418f), url(../img/bg.png);
+      background-size: 120%;
+      transition: width .3s, color .3s; } }
+  .header__link-box:hover::before {
+    width: 100%; }
+  @media screen and (min-width: 1029px) {
+    .header__link-box:hover .header__link {
+      color: #eaeaea; } }
   .header__link {
     text-decoration: none;
     border: none;
     color: #292929;
-    font-weight: 400;
-    /*
-        @include breakpoint(large) {
-            color: $color-grey;
-            z-index: 10;
-        }*/ }
-  .header__icon {
-    font-size: 1.6rem;
-    color: #292929; }
+    font-weight: 400; }
+    @media screen and (min-width: 1029px) {
+      .header__link {
+        position: relative;
+        z-index: 10; } }
 
 .footer {
   background-color: #353535;
