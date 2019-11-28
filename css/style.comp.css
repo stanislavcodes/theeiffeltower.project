@@ -180,7 +180,7 @@ body {
   @media screen and (min-width: 1029px) {
     .section-hero {
       grid-template-columns: repeat(16, 1fr);
-      grid-template-rows: [picture-start] 1fr max-content [info-start] max-content [info-end picture-end]; } }
+      grid-template-rows: [picture-start] 1fr max-content [info-start] max-content [info-end] 0.25fr [picture-end]; } }
   @media screen and (min-width: 1399px) {
     .section-hero {
       grid-template-columns: repeat(16, 1fr);
@@ -338,7 +338,7 @@ body {
     .header {
       grid-column: header-start / header-end;
       flex-direction: column;
-      padding: 0; } }
+      padding: 1em 0; } }
   .header__icon-box {
     align-self: stretch;
     display: flex;
@@ -368,7 +368,7 @@ body {
         @media screen and (min-width: 1029px) {
           .header__icon-box--item:not(:last-child) {
             margin-right: 0;
-            margin-bottom: 0.5em; } }
+            margin-bottom: 1em; } }
       @media screen and (min-width: 1029px) {
         .header__icon-box--item {
           position: relative;

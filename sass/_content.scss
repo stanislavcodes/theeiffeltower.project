@@ -152,7 +152,7 @@
         
         @include breakpoint(large) {
             grid-template-columns: repeat(16, 1fr);
-            grid-template-rows: [picture-start] 1fr max-content [info-start] max-content [info-end picture-end];
+            grid-template-rows: [picture-start] 1fr max-content [info-start] max-content [info-end] 0.25fr  [picture-end];
         }
 
         @include breakpoint(xlarge) {

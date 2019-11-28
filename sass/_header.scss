@@ -20,7 +20,7 @@
         grid-column: header-start / header-end;
         //HEADER CONTENT
         flex-direction: column;
-        padding: 0;
+        padding: 1em 0;
     }
     &__icon-box {
         align-self: stretch;
@@ -58,7 +58,7 @@
 
                 @include breakpoint(large) {
                     margin-right: 0;
-                    margin-bottom: 0.5em;
+                    margin-bottom: 1em;
                 }
             }
 
