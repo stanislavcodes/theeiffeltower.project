@@ -98,7 +98,7 @@
                 font-size: 1em;
             }
 
-            @include breakpoint(large) {
+            @include breakpoint(xlarge) {
                 font-size: calc(1em + 0.15vw);
             }
         }
@@ -140,6 +140,7 @@
         position: relative;
 
         //HERO CONTENT
+        background-color: #fff;
         display: grid;
         grid-template-columns: [info-start picture-start] 1fr [info-end picture-end];
         grid-template-rows: [picture-start] 1fr [picture-end info-start] min-content [info-end];
