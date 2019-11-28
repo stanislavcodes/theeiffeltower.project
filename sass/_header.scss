@@ -26,51 +26,110 @@
         align-self: stretch;
         display: flex;
         flex-direction: row;
-        align-items: center;
+        align-items: stretch;
         justify-content: space-between;
+        list-style: none;
 
         @include breakpoint(large) {
             flex-direction: column;
         }
 
-        a {
+        &--item {
             text-decoration: none;
             border: none;
             color: $color-text;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-                &:not(:last-child) {
-                    margin-right: 2rem;
+            a {
+                text-decoration: none;
+                border: none;
+                color: currentColor;
+            }
 
-                    @include breakpoint(large) {
-                        margin-right: 0;
-                        margin-bottom: 2rem;
-                    }
-            } 
+
+            &:not(:last-child) {
+                margin-right: 2em;
+
+                @include breakpoint(large) {
+                    margin-right: 0;
+                    margin-bottom: 0.5em;
+                }
+            }
+
+            @include breakpoint(large) {
+                position: relative;
+                padding: 0.85em;
+            
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    height: 100%;
+                    width: 0;
+                    background: linear-gradient(to right, #4141418f, #4141418f), url(../img/bg.png);
+                    background-size: 120%;
+                    transition: width .3s, color .3s;
+                }
+                &:hover::before {
+                    width: 100%;
+                }
+
+                &:hover {
+                    color: $color-grey;
+                }
+            }
+
+            
+        }
+    }
+
+    &__icon {
+        font-size: 1.6rem;
+        //color: $color-text;
+
+        @include breakpoint(large) {
+            position: relative;
+            z-index: 9;    
         }
     }
 
     &__link-box {
-        @include breakpoint(large){
+        @include breakpoint(large) {
             position: relative;
             align-self: stretch;
             padding: 1em;
             text-align: center;
             background-color: #fff;
+            color: $color-text;
         }
-/*
+
         &::before {
             @include breakpoint(large) {
                 content: "";
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 100%;
+                width: 0%;
                 height: 100%;
                 background: linear-gradient(to right, #4141418f, #4141418f), url(../img/bg.png);
-                background-size: 50%;
-                z-index: 1;
+                background-size: 120%;
+                transition: width .3s, color .3s;
             }
-        }*/
+        }
+
+        &:hover::before {
+            width: 100%;
+        }
+
+        &:hover .header__link {
+            @include breakpoint(large) {
+                color: $color-grey;
+            }
+        }
     }
 
     &__link {
@@ -78,15 +137,10 @@
         border: none;
         color: $color-text;
         font-weight: 400;
-/*
+        
         @include breakpoint(large) {
-            color: $color-grey;
+            position: relative;
             z-index: 10;
-        }*/
-    }
-
-    &__icon {
-        font-size: 1.6rem;
-        color: $color-text;
+        }
     }
 }
