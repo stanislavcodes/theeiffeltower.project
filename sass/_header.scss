@@ -20,7 +20,7 @@
         grid-column: header-start / header-end;
         //HEADER CONTENT
         flex-direction: column;
-        padding: 2.5rem 0 3.125rem 0;
+        padding: 0;
     }
     &__icon-box {
         align-self: stretch;
@@ -50,7 +50,11 @@
 
 
             &:not(:last-child) {
-                margin-right: 2em;
+                margin-right: 1.2em;
+
+                @include breakpoint(medium) {
+                    margin-right: 2em;
+                }
 
                 @include breakpoint(large) {
                     margin-right: 0;
@@ -88,12 +92,27 @@
     }
 
     &__icon {
-        font-size: 1.6rem;
-        //color: $color-text;
+        font-size: calc(1.2em + 0.15vh);
 
         @include breakpoint(large) {
             position: relative;
             z-index: 9;    
+        }
+
+        @include breakpoint(xsmall) {
+            font-size: calc(1.8em + 0.15vw);
+        }
+
+        @include breakpoint(medium) {
+            font-size: calc(2em + 0.15vw);
+        }
+
+        @include breakpoint(large) {
+            font-size: calc(1.2em + 0.15vw);
+        }
+
+        @include breakpoint(xlarge) {
+            font-size: calc(1.5em + 0.15vw);
         }
     }
 
@@ -142,5 +161,17 @@
             position: relative;
             z-index: 10;
         }
+
+        @include breakpoint(xsmall) {
+                font-size: 1em;
+            }
+
+            @include breakpoint(medium) {
+                font-size: 1em;
+            }
+
+            @include breakpoint(xlarge) {
+                font-size: calc(1em + 0.15vw);
+            }
     }
 }
