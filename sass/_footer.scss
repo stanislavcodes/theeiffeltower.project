@@ -11,7 +11,7 @@
     grid-row: footer-start / footer-end;
 
     
-    @include breakpoint(large) {
+    @include breakpoint(xlarge) {
         font-size: calc(1em + 0.15vw);
     }
 }

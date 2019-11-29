@@ -34,16 +34,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
+            position: relative;
+            width: 80%;
+            height: 80%;
         }
 
         &__img {
-            max-width: 100%;
+            width: 100%;
 
             @include breakpoint(medium) {
-                max-width: 80%;
-            }
-            @include breakpoint(large) {
-                max-width: 70%;
+                width: 80%;
             }
         }
     };
@@ -100,6 +101,7 @@
 
             @include breakpoint(xlarge) {
                 font-size: calc(1em + 0.15vw);
+                max-width: 70%;
             }
         }
     }
